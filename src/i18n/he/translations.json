@@ -1,3 +1,20 @@
 {
-  "": ""
+  "welcome": "ברוכים הבאים",
+  "newUser": "משתמש חדש",
+  "resetPassword": "שחזור סיסמא",
+  "loginToUser": "התחברות למשתמש שלך",
+  "createNewUser": "צור משתמש חדש",
+  "linkToReset": "ישלח אלייך קישור לאיפוס סיסמא",
+  "email": "אימייל",
+  "phoneNumber": "מס' פלאפון",
+  "or": "או",
+  "password": "סיסמא",
+  "rememberMe": "זכור אותי",
+  "forgetPassword": "שכחתי סיסמא",
+  "noUser": "אין עדיין משתמש",
+  "signUp": "הירשם",
+  "fullName": "שם מלא",
+  "connectWith": "או התחבר עם",
+  "connect": "התחבר",
+  "send": "שלח"
 }

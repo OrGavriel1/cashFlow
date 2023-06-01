@@ -9,6 +9,7 @@ import {
   InputAdornment,
   useMediaQuery,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 // icons
 import LockIcon from "@mui/icons-material/Lock";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
@@ -27,6 +28,9 @@ const LoginPage: FC = () => {
   const isDesktop = useMediaQuery("(min-width:600px)");
   const phoneInput = useRef<HTMLInputElement | null>(null);
   const passwordInput = useRef<HTMLInputElement | null>(null);
+  const { t } = useTranslation();
+  const phoneNumber = t("phoneNumber");
+  const password = t("password");
 
   const onSubmitHandler = (event: React.FormEvent) => {
     event.preventDefault();
@@ -55,7 +59,7 @@ const LoginPage: FC = () => {
         onSubmit={onSubmitHandler}
       >
         <MyInput
-          placeholder="מספר פלאפון"
+          placeholder={phoneNumber}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -66,7 +70,7 @@ const LoginPage: FC = () => {
           inputRef={phoneInput}
         />
         <MyInput
-          placeholder="סיסמא"
+          placeholder={password}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -94,20 +98,20 @@ const LoginPage: FC = () => {
                 checkedIcon={<CheckCircleIconNew />}
               />
             }
-            label="זכור אותי"
+            label={t("rememberMe")}
           />
-          <Link to="/forgetPassword">שכחתי סיסמא</Link>
+          <Link to="/forgetPassword">{t("forgetPassword")}</Link>
         </Box>
         <ButtonSubmit variant="contained" type="submit">
-          התחבר
+          {t("connect")}
         </ButtonSubmit>
       </Box>
       <BottomBox>
         <Typography margin="0 1rem" color="gray">
-          אין עדיין משתמש?
+          {t("noUser")}
         </Typography>
         <Link to="/register">
-          <Button color="primary">הירשם</Button>
+          <Button color="primary">{t("signUp")}</Button>
         </Link>
       </BottomBox>
     </BoxAuth>

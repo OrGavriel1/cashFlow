@@ -13,8 +13,12 @@ import {
 } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import { useTranslation } from "react-i18next";
 
 const ForgetPassword = () => {
+  const { t } = useTranslation();
+  const email = t("email");
+  const phoneNumber = t("phoneNumber");
   const isDesktop = useMediaQuery("(min-width:600px)");
   return (
     <BoxAuth>
@@ -27,7 +31,7 @@ const ForgetPassword = () => {
         width={isDesktop ? "50%" : "100%"}
       >
         <MyInput
-          placeholder="אימייל"
+          placeholder={email}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -36,9 +40,9 @@ const ForgetPassword = () => {
             ),
           }}
         />
-        <Divider sx={{ width: "85%", margin: "3rem 0" }}>או</Divider>
+        <Divider sx={{ width: "85%", margin: "3rem 0" }}>{t("or")}</Divider>
         <MyInput
-          placeholder="מס' פלאפון"
+          placeholder={phoneNumber}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -48,7 +52,7 @@ const ForgetPassword = () => {
           }}
         />
         <ButtonSubmit variant="contained" type="submit">
-          שלח
+          {t("send")}
         </ButtonSubmit>
       </Box>
     </BoxAuth>

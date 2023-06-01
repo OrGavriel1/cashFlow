@@ -9,19 +9,20 @@ import { useTranslation } from "react-i18next";
 
 interface AuthBoxProps {}
 
-const title = {
-  "/": "ברוכים הבאים",
-  "/register": "משתמש חדש",
-  "/forgetPassword": "שחזור סיסמא",
-};
-
-const secondeTitle = {
-  "/": "התחברות למשתמש שלך",
-  "/register": "צור משתמש חדש",
-  "/forgetPassword": "ישלח אלייך קישור לאיפוס סיסמא",
-};
 const AuthBox: FC<AuthBoxProps> = () => {
   const { t } = useTranslation();
+
+  const title = {
+    "/": t("welcome"),
+    "/register": t("newUser"),
+    "/forgetPassword": t("resetPassword"),
+  };
+
+  const secondeTitle = {
+    "/": t("loginToUser"),
+    "/register": t("createNewUser"),
+    "/forgetPassword": t("linkToReset"),
+  };
 
   const navigate = useNavigate();
   const currentPage = useLocation();

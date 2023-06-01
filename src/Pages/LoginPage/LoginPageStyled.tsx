@@ -12,13 +12,13 @@ export const BoxAuth = styled(Box)(({ theme }) => ({
 
 export const MyInput = styled(TextField)(({ theme }) => ({
   borderRadius: "8px",
-  backgroundColor: "#dae5dd",
+  backgroundColor: theme.palette.secondary.main,
 
   margin: "0.5rem",
   width: "100%",
   border: "none",
   "& .MuiInputBase-input": {
-    color: "primary",
+    color: theme.palette.primary.main,
   },
   "& .MuiInputBase-root": {
     border: "none",
@@ -34,6 +34,7 @@ export const ButtonSubmit = styled(Button)(({ theme }) => ({
   fontSize: "1.2rem",
   borderRadius: "50px",
 }));
+
 export const CheckCircleIconNew = styled(CheckCircleIcon)(({ theme }) => ({
   color: "primary",
   outline: 0,

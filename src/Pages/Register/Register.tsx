@@ -6,9 +6,15 @@ import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import LockIcon from "@mui/icons-material/Lock";
 //style component
 import { BoxAuth, ButtonSubmit, MyInput } from "../LoginPage/LoginPageStyled";
+import { useTranslation } from "react-i18next";
 
 const NewUser = () => {
   const isDesktop = useMediaQuery("(min-width:600px)");
+  const { t } = useTranslation();
+  const fullName = t("fullName");
+  const email = t("email");
+  const phoneNumber = t("phoneNumber");
+  const password = t("password");
   return (
     <BoxAuth>
       <Box
@@ -20,7 +26,7 @@ const NewUser = () => {
         width={isDesktop ? "50%" : "100%"}
       >
         <MyInput
-          placeholder="שם מלא"
+          placeholder={fullName}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -30,7 +36,7 @@ const NewUser = () => {
           }}
         />
         <MyInput
-          placeholder="אימייל"
+          placeholder={email}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -40,7 +46,7 @@ const NewUser = () => {
           }}
         />
         <MyInput
-          placeholder="מס' פלאפון"
+          placeholder={phoneNumber}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -50,7 +56,7 @@ const NewUser = () => {
           }}
         />
         <MyInput
-          placeholder="סיסמא"
+          placeholder={password}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -60,10 +66,12 @@ const NewUser = () => {
           }}
         />
         <ButtonSubmit variant="contained" type="submit">
-          הירשם
+          {t("signUp")}
         </ButtonSubmit>
       </Box>
-      <Divider sx={{ width: "85%", marginTop: "3rem" }}>או התחבר עם</Divider>
+      <Divider sx={{ width: "85%", marginTop: "3rem" }}>
+        {t("connectWith")}
+      </Divider>
     </BoxAuth>
   );
 };

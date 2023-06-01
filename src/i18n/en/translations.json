@@ -1,3 +1,20 @@
 {
-  "": ""
+  "welcome": "Welcome",
+  "newUser": "Register",
+  "resetPassword": "Forget Password",
+  "loginToUser": "Login to your account",
+  "createNewUser": "Create your new account",
+  "linkToReset": "Link to reset your password will be sent to you",
+  "email": "Email",
+  "phoneNumber": "Phone Number",
+  "or": "or",
+  "password": "Password",
+  "rememberMe": "Remember Me",
+  "forgetPassword": "Forget Password",
+  "noUser": "Don't have account?",
+  "signUp": "Sign Up",
+  "fullName": "Full Name",
+  "connectWith": "Or continue with",
+  "connect": "Connect",
+  "send": "Send"
 }
