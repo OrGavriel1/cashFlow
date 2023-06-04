@@ -2,10 +2,12 @@ import { FC } from "react";
 import { Box, Typography, IconButton } from "@mui/material";
 // icons
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
+
 import { BoxAuth, TopBox } from "../Pages/LoginPage/LoginPageStyled";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { CoverImg, ImgBox } from "./AuthBoxStyle";
 import { useTranslation } from "react-i18next";
+import LngButton from "../components/LngButton";
 
 interface AuthBoxProps {}
 
@@ -38,6 +40,8 @@ const AuthBox: FC<AuthBoxProps> = () => {
 
       <BoxAuth>
         <TopBox>
+          <LngButton />
+
           <ImgBox
             component="img"
             src="https://img.freepik.com/free-vector/piggy-bank_53876-25494.jpg?w=740&t=st=1682325255~exp=1682325855~hmac=96f769a6f7fc9c4bb38bd54dbba590b32e15ea19b94516adf481dad3b873c410"
@@ -45,8 +49,9 @@ const AuthBox: FC<AuthBoxProps> = () => {
           {!(currentPage.pathname === "/") && (
             <IconButton
               sx={{
-                position: "absolute",
-                right: "20rem",
+                position: "relative",
+                right: "11rem",
+                bottom: "4rem",
                 backgroundColor: "#dae5dd",
               }}
               onClick={() => navigate(-1)}
@@ -54,7 +59,12 @@ const AuthBox: FC<AuthBoxProps> = () => {
               <NavigateBeforeIcon />
             </IconButton>
           )}
-          <Typography variant="h3" color="primary">
+          <Typography
+            variant="h3"
+            color="primary"
+            display="flex"
+            justifyContent="center"
+          >
             {title[currentPage.pathname as keyof typeof title]}
           </Typography>
           <Typography

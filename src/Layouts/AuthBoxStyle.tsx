@@ -1,10 +1,11 @@
 import { Box, styled } from "@mui/material";
 
 export const ImgBox = styled(Box)(({ theme }) => ({
-  width: "80px",
-  height: "80px",
-  position: "absolute",
-  left: "20rem",
+  width: "60px",
+  height: "60px",
+  position: "relative",
+  left: "7rem",
+  top: "5rem",
 }));
 
 type CoverImgProps = {
